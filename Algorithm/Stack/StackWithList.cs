@@ -1,49 +1,49 @@
-﻿namespace Algorithm.Stack;
+﻿namespace SimplifiedDSA.Stack;
 
-public class StackWithList
+public class StackWithList<T>
 {
-    private readonly List<int> list = new();
-    private int Top = -1;
+    private readonly List<T> _list = new();
+    private int _top = -1;
 
     public bool IsEmpty =>
-        list.Any();
+        _list.Any();
 
     public int Count =>
-        list.Count;
+        _list.Count;
 
-    public int Push(int value)
+    public T Push(T value)
     {
-        list.Add(value);
-        Top++;
+        _list.Add(value);
+        _top++;
         return value;
     }
 
-    public int Pop()
+    public T Pop()
     {
-        int value = Peek();
-        list.RemoveAt(Top);
-        Top--;
+        T value = Peek();
+        _list.RemoveAt(_top);
+        _top--;
         return value;
     }
 
-    public int Peek()
+    public T Peek()
     {
-        IsvalidStack();
-        return list[Top];
+        IsValidStack();
+        return _list[_top];
     }
 
     public void StackElements()
     {
         int count = 0;
-        foreach (int item in list)
+        foreach (T item in _list)
         {
-            Console.WriteLine("S no. :" + ++count + " item: " + item);
+            Console.WriteLine($"Element {++count}: {item}");
         }
     }
 
-    private void IsvalidStack()
+    private void IsValidStack()
     {
-        if (Top < 0)
+        if (_top < 0)
         {
             throw new InvalidOperationException("Stack is empty.");
         }

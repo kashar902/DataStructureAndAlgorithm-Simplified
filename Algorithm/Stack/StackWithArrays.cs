@@ -1,53 +1,53 @@
-﻿namespace Algorithm.Stack;
+﻿namespace SimplifiedDSA.Stack;
 
-public class StackWithArrays
+public class StackWithArrays<T>
 {
-    private readonly static int arrayLength = 10;
-    int[] arr = new int[arrayLength];
-    int Top = -1;
+    private const int ArrayLength = 10;
+    T[] _arr = new T[ArrayLength];
+    int _top = -1;
 
     public bool IsEmpty =>
-        Top < 0;
+        _top < 0;
 
     public int Count => 
-        arr.Length;
+        _arr.Length;
 
     public int StackCapacity
-        => arrayLength;
+        => ArrayLength;
 
-    public int Push(int value) 
+    public T Push(T value) 
     {
-        if (Top > arrayLength)
+        if (_top > ArrayLength)
             throw new InvalidOperationException("Stack overflow.");
-        arr[++Top] = value; return value;
+        _arr[++_top] = value; return value;
     }
 
-    public int Pop()
+    public T Pop()
     {
-        int value = Peek();
-        Top--;
+        T value = Peek();
+        _top--;
         return value;
     }
 
-    public int Peek() 
+    public T Peek() 
     {
         IsvalidStack();
-        return arr[Top];
+        return _arr[_top];
     }
         
     
     public void StackElements() 
     {
         int count = 0;
-        foreach (int item in arr)
+        foreach (T item in _arr)
         {
-            Console.WriteLine("S no. :" + ++count + " item: " + item);
+            Console.WriteLine($"Element {++count}: {item}");
         }
     }
     
     private void IsvalidStack() 
     {
-        if (Top < 0)
+        if (_top < 0)
         {
             throw new InvalidOperationException("Stack is empty.");
         }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simplified-DSA", "Algorithm\Simplified-DSA.csproj", "{CCBA917E-F7F3-427A-8FF4-677F8EBE78D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplifiedDSA", "Algorithm\SimplifiedDSA.csproj", "{CCBA917E-F7F3-427A-8FF4-677F8EBE78D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
